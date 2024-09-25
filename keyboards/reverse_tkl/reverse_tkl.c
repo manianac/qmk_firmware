@@ -297,8 +297,8 @@ void render_menu(void) {
 
     if (!oled_menu_selected)
     {
-        const int8_t min_index = (oled_menu_start > (oled_menu_cursor-2) ? oled_menu_start : (oled_menu_cursor-2));
-        const int8_t max_index = (oled_menu_end < (min_index+2) ? oled_menu_end : (min_index+2));
+        const int8_t min_index = (oled_menu_start > (oled_menu_cursor-3) ? oled_menu_start : (oled_menu_cursor-3));
+        const int8_t max_index = (oled_menu_end < (min_index+3) ? oled_menu_end : (min_index+3));
 
         //dprintf("start: %d, cursor: %d, end %d\n", min_index, oled_menu_cursor, max_index);
 
@@ -350,6 +350,7 @@ void render_menu(void) {
                 }
                 oled_write("Scan Freq(Hz):", false);
                 oled_write_ln(get_u16_str(get_matrix_scan_rate(), ' '), false);
+                oled_write_ln("", false);
                 break;
             }
         }
@@ -382,7 +383,8 @@ bool oled_task_kb(void) {
     if (oled_menu_cursor != _MENU_HIDDEN)
     {
         render_menu();
-        render_bongocat();
+        oled_write_ln("", false);
+        render_menu_logo();
     }
     else if (timer_elapsed32(oled_sleep) > OLED_TIMEOUT/2) {
         render_starrynight();
