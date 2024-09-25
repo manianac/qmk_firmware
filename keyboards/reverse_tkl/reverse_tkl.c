@@ -350,7 +350,7 @@ void render_menu(void) {
                 }
                 oled_write("Scan Freq(Hz):", false);
                 oled_write_ln(get_u16_str(get_matrix_scan_rate(), ' '), false);
-                oled_write_ln("", false);
+                oled_write_ln(("BUILD: " __DATE__), false);
                 break;
             }
         }
