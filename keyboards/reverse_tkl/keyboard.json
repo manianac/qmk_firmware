@@ -7,7 +7,7 @@
     "features": {
         "bootmagic": false,
         "command": true,
-        "console": true,
+        "console": false,
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
@@ -160,6 +160,7 @@
             "cycle_up_down": true,
             "digital_rain": true,
             "dual_beacon": true,
+            "flower_blooming": true,
             "gradient_left_right": true,
             "gradient_up_down": true,
             "hue_breathing": true,
@@ -187,6 +188,8 @@
             "solid_splash": true,
             "splash": true,
             "starlight": true,
+            "starlight_dual_sat": true,
+            "starlight_dual_hue": true,
             "typing_heatmap": true
         },
         "driver": "ws2812",

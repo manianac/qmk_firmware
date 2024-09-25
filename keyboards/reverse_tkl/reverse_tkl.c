@@ -288,8 +288,8 @@ void render_rgb_mode(const uint8_t value)
     }
     oled_write_ln(oled_menu_str[oled_menu_cursor], false);
     oled_write_ln(buf, false);
-    for (int i=0;i<oled_max_chars()*2;i++)
-        oled_write_char(' ', false);
+    for (int i=0;i<oled_max_chars()*(strlen(buf) > 20 ? 1 : 2);i++) //this hack just keeps the screen clean
+       oled_write_char(' ', false);
 }
 
 void render_menu(void) {
@@ -307,7 +307,6 @@ void render_menu(void) {
 
         for (int8_t i=max_index; i<3; i++)
         {
-
             oled_write_ln("", false);
         }
     }
