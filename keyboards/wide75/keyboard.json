@@ -11,16 +11,16 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "rgb_matrix": true,
-        "oled": true,
+        "rgb_matrix": false,
+        "oled": false,
         "os_detection": true,
         "usbpd": true,
         "wpm": true,
-        "ws2812": true
+        "ws2812": false
     },
     "matrix_pins": {
-        "cols": ["PA15", "PB10", "PA1", "PA2", "PA3", "PA4", "PA5", "PA6", "PA7", "PB0", "PB1", "PB2", "PB11", "PB14", "PB9", "PB7"],
-        "rows": ["PB5", "PC15", "PC14", "PC13", "PB13", "PB12"]
+        "cols": ["A15", "B10", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "B0", "B1", "B2", "B11", "B14", "B9", "B7"],
+        "rows": ["B5", "C15", "C14", "C13", "B13", "B12"]
     },
     "mouse_key": {
         "enabled": true
@@ -186,6 +186,6 @@
     },
     "ws2812": {
         "driver": "pwm",
-        "pin": "PA5"
+        "pin": "A5"
     }
 }
