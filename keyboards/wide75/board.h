@@ -16,16 +16,16 @@
 
 #include_next <board.h>
 
-// #ifdef STM32_HSECLK
-// #undef STM32_HSECLK
-// #endif
-// #define STM32_HSECLK 16000000
-// #ifdef STM32_LSECLK
-// #undef STM32_LSECLK
-// #endif
-// #define STM32_LSECLK                0U
+#ifdef STM32_HSECLK
+#undef STM32_HSECLK
+#endif
+#define STM32_HSECLK 16000000
+#ifdef STM32_LSECLK
+#undef STM32_LSECLK
+#endif
+#define STM32_LSECLK                0U
 
-// #ifdef STM32_LSEDRV
-// #undef STM32_LSEDRV
-// #endif
-// #define STM32_LSEDRV                (3U << 3U)
+#ifdef STM32_LSEDRV
+#undef STM32_LSEDRV
+#endif
+#define STM32_LSEDRV                (3U << 3U)
