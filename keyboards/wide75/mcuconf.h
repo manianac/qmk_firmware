@@ -27,6 +27,12 @@
 #undef STM32_PLLSRC
 #define STM32_PLLSRC                        STM32_PLLSRC_HSE
 
+#undef STM32_I2C2SEL
+#define STM32_I2C2SEL                       STM32_I2C2SEL_PCLK1
+
+#undef STM32_CLK48SEL
+#define STM32_CLK48SEL                      STM32_CLK48SEL_PLLQCLK
+
 #undef STM32_PLLM_VALUE
 #define STM32_PLLM_VALUE                    1
 
@@ -36,30 +42,26 @@
 #undef STM32_PLLPDIV_VALUE
 #define STM32_PLLPDIV_VALUE                 2
 
-// #undef STM32_PLLP_VALUE
-// #define STM32_PLLP_VALUE                    7
+#undef STM32_PLLP_VALUE
+#define STM32_PLLP_VALUE                    7
+
+#undef STM32_PLLR_VALUE
+#define STM32_PLLR_VALUE                    2
 
 #undef STM32_PLLQ_VALUE
 #define STM32_PLLQ_VALUE                    4
 
+#undef STM32_PPRE1
+#define STM32_PPRE1                         STM32_PPRE1_DIV1
+
+#undef STM32_PPRE2
+#define STM32_PPRE2                         STM32_PPRE2_DIV1
+
 #undef STM32_I2C_USE_I2C2
-#define STM32_I2C_USE_I2C2 TRUE
+#define STM32_I2C_USE_I2C2                  TRUE
 
-#define I2C_DRIVER I2CD2
-#define I2C2_SCL_PIN A9
-#define I2C2_SCL_PAL_MODE 4
-#define I2C2_SDA_PIN A8
-#define I2C2_SDA_PAL_MODE 4
+#undef STM32_PWM_USE_TIM5
+#define STM32_PWM_USE_TIM5                  TRUE
 
-#define I2C2_TIMINGR_PRESC   0x0U
-#define I2C2_TIMINGR_SCLDEL  0x3U
-#define I2C2_TIMINGR_SDADEL  0x3U
-#define I2C2_TIMINGR_SCLH   0x10U
-#define I2C2_TIMINGR_SCLL   0x61U
-
-#undef STM32_PWM_USE_TIM2
-#define STM32_PWM_USE_TIM2 TRUE
-
-/* Reallocate the SysTick timer from TIM2 to TIM5, TIM2 is used for in switch leds */
-#undef STM32_ST_USE_TIMER
-#define STM32_ST_USE_TIMER 5
+#undef STM32_I2C_USE_DMA
+#define STM32_I2C_USE_DMA                   FALSE
