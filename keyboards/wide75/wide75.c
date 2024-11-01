@@ -13,8 +13,9 @@ oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
 
 bool oled_task_kb(void) {
     if (!oled_task_user()) { return false; }
-
-    oled_write_P(PSTR("Layer: "), false);
+    char szBuffer[64] = {0};
+    sprintf(szBuffer, "Clock: %d", timer_read());
+    oled_write(szBuffer, false);
 
     return true;
 }

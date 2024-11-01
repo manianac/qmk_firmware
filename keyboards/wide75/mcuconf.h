@@ -64,4 +64,4 @@
 #define STM32_PWM_USE_TIM5                  TRUE
 
 #undef STM32_I2C_USE_DMA
-#define STM32_I2C_USE_DMA                   FALSE
+#define STM32_I2C_USE_DMA                   TRUE
