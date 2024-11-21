@@ -13,10 +13,11 @@ oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
 
 bool oled_task_kb(void) {
     if (!oled_task_user()) { return false; }
-    char szBuffer[64] = {0};
-    sprintf(szBuffer, "Clock: %d", timer_read());
-    oled_write(szBuffer, false);
-
+    oled_invert(true);
+    oled_write_ln("#################", false);
+    oled_write_ln("#################", false);
+    oled_write_ln("#################", false);
+    oled_write_ln("#################", false);
     return true;
 }
 #endif
