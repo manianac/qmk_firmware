@@ -12,7 +12,6 @@
         "bootmagic": false,
         "command": true,
         "console": true,
-        "dip_switch": true,
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
@@ -34,7 +33,7 @@
     "url": "",
     "usb": {
         "device_version": "1.0.0",
-        "pid": "0x0000",
+        "pid": "0x3175",
         "vid": "0xFEED"
     },
     "layouts": {
@@ -265,7 +264,7 @@
             {"matrix": [0, 14], "x": 210, "y": 0, "flags": 4},
             {"matrix": [0, 15], "x": 224, "y": 0, "flags": 4}
         ],
-        "max_brightness": 16,
+        "max_brightness": 255,
         "sleep": true,
         "timeout": 120000,
         "sat_steps": 8,
