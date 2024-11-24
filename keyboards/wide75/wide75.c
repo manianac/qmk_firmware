@@ -1,5 +1,6 @@
 #include "wide75.h"
 #include <ctype.h>
+#include "oled_stuff.h"
 #include "bongocat\bongocat.h"
 
 uint32_t oled_sleep         = 0;
@@ -74,6 +75,21 @@ oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
 
 bool oled_task_kb(void) {
     if (!oled_task_user()) { return false; }
+
+    static bool finished_logo = false;
+
+    if (!finished_logo && (timer_elapsed(startup_timer) < OLED_BOOT_LOGO_TIMEOUT))
+    {
+        render_logo();
+        return false;
+
+    }
+    else if (!finished_logo)
+    {
+        finished_logo = true;
+        oled_clear();
+        return false;
+    }
 
     if (timer_elapsed32(oled_sleep) > OLED_TIMEOUT) {
         oled_off();
