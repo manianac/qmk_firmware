@@ -65,3 +65,6 @@
 
 #undef STM32_I2C_USE_DMA
 #define STM32_I2C_USE_DMA                   TRUE
+
+#undef STM32_ADC_USE_ADC2
+#define STM32_ADC_USE_ADC2 TRUE
